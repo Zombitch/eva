@@ -1,0 +1,48 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+// Define a dark theme
+$dark-theme: mat.define-dark-theme((
+ color: (
+   primary: mat.define-palette(mat.$indigo-palette),
+   accent: mat.define-palette(mat.$blue-grey-palette),
+ ),
+  // Only include `typography` and `density` in the default dark theme.
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+// Apply the dark theme by default
+@include mat.core-theme($dark-theme);
+@include mat.all-component-themes($dark-theme);
+
+// Add margin
+$margin-values: (1,2,3,5,10,15,20,30,40,50,100);
+@each $value in $margin-values {
+  .mr-#{$value} {
+    margin-right: $value + em;
+  }
+  .ml-#{$value} {
+    margin-left: $value + em;
+  }
+  .mb-#{$value} {
+    margin-bottom: $value + em;
+  }
+  .mt-#{$value} {
+    margin-top: $value + em;
+  }
+  .m-#{$value} {
+    margin: $value + em;
+  }
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+section > .mat-accordion .mat-expansion-panel:last-of-type,
+section > .mat-accordion .mat-expansion-panel:first-of-type,
+section > .mat-expansion-panel {
+  border-radius: 0px;
+}

@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'eva';
+  title = 'EVA';
+  toolbarElements: {}[] = [
+    {text: 'Armes', cols: 1, rows: 1, color: 'lightpink'},
+    {text: 'Maps', cols: 1, rows: 1, color: '#DDBDF1'},
+  ];
 }
