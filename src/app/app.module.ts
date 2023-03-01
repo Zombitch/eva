@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WeaponsComponent } from './components/weapons/weapons.component';
 import { MapsComponent } from './components/maps/maps.component';
+import { WeaponsTableComponent } from './components/weapons/weapons-table/weapons-table.component';
+import { WeaponsCardComponent } from './components/weapons/weapons-card/weapons-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
@@ -14,12 +16,15 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeaponsComponent,
-    MapsComponent
+    MapsComponent,
+    WeaponsTableComponent,
+    WeaponsCardComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatGridListModule,
     MatIconModule,
     MatExpansionModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
