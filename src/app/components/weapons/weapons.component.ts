@@ -14,7 +14,7 @@ export class WeaponsComponent implements AfterContentChecked{
   weapons: Weapon[] = []; // Toutes les armes
 
   // Gestion des entete du tableau
-  columnNames: string[] = ['name', 'image', 'damage', 'fireRate'];
+  columnNames: string[] = ['name', 'damage', 'fireRate'];
   displayedColumnNames: string[] = this.columnNames;
 
   // Filtre et options
@@ -52,7 +52,7 @@ export class WeaponsComponent implements AfterContentChecked{
 
   showHideDetails(event: MatSlideToggleChange): void{
     if(event.checked){
-      this.displayedColumnNames = ['name', 'image', 'damage', 'fireRate', 'magazineNumber', 'bulletSpeed', 'reloadSpeed', 'damageDrop'];
+      this.displayedColumnNames = ['name', 'damage', 'fireRate', 'magazineNumber', 'bulletSpeed', 'reloadSpeed', 'damageDrop'];
     }else{
       this.displayedColumnNames = this.columnNames;
     }
