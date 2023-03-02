@@ -1,5 +1,5 @@
 export interface Weapon{
-    name: string;
+    name?: string;
     type?: string;
     image?: string;
 

@@ -24,7 +24,7 @@ export class WeaponsTableComponent {
     this.filteredWeapons = this.weapons.filter(weapon => !weapon.hidden);
   }
 
-  filter(event: MatChipSelectionChange, weaponName: string): void{
+  filter(event: MatChipSelectionChange, weaponName: string|undefined): void{
     const weapon: Weapon|undefined = this.weapons.find(w => w.name === weaponName);
     if(weapon) weapon.hidden = !event.selected;
 

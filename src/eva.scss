@@ -18,7 +18,7 @@ $dark-theme: mat.define-dark-theme((
 @include mat.all-component-themes($dark-theme);
 
 // Add margin
-$margin-values: (1,2,3,5,10,15,20,30,40,50,100);
+$margin-values: (1,2,3,5,10,15,20,25,30,40,50,75,100);
 @each $value in $margin-values {
   .mr-#{$value} {
     margin-right: $value + em;
@@ -35,6 +35,30 @@ $margin-values: (1,2,3,5,10,15,20,30,40,50,100);
   .m-#{$value} {
     margin: $value + em;
   }
+
+  .w-#{$value} {
+    width: $value + '%';
+  }
+}
+
+.margin-auto{
+  margin: auto;
+}
+
+.margin-left-auto{
+  margin-left: auto;
+}
+
+.margin-right-auto{
+  margin-right: auto;
+}
+
+.margin-top-auto{
+  margin-top: auto;
+}
+
+.margin-bottom-auto{
+  margin-bottom: auto;
 }
 
 .pointer{
@@ -51,8 +75,19 @@ section > .mat-expansion-panel {
   text-align: center;
 }
 
+.text-right{
+  text-align: right;
+}
+
+.left{ float: left;}
+.right{ float: right;}
+
 .italic{
   font-style: italic;
+}
+
+.bold{
+  font-weight: 500;
 }
 
 .white{
@@ -62,23 +97,33 @@ section > .mat-expansion-panel {
 .overflow-x{
   overflow-x: auto;
   white-space: nowrap;
+}
 
+.overflow-auto{
+  overflow: auto;
+}
+
+.overflow{
   scrollbar-color: #3f51b5 #000;
   scrollbar-width: thin;
 }
 
-.overflow-x::-webkit-scrollbar {
+.overflow::-webkit-scrollbar {
   width: 5px;
   height: 5px;
   background-color: #000;
 }
 
-.overflow-x::-webkit-scrollbar-thumb {
+.overflow::-webkit-scrollbar-thumb {
   background: #3f51b5;
 }
 
 .inline-block{
-  display:inline-block
+  display: inline-block;
+}
+
+.flex{
+  display: flex
 }
 
 .responsive-image{

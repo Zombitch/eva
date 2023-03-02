@@ -70,7 +70,7 @@ export class EvaService {
             dispersion: 0.6
           }
         },{
-          name: "Needle",
+          name: "NEEDLE",
           image: 'assets/weapons/needle.png',
           details: {
             headDamage: 50,

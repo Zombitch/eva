@@ -1,1 +1,58 @@
-<p>weapons-card works!</p>
+<section [ngClass]="{'flex': ['Large', 'XLarge'].includes(breakpoint)}">
+    <!-- ***** Card 1 ***** -->
+    <mat-card class="margin-left-auto margin-right-auto mt-1" *ngFor="let idx of [0,1]">
+        <mat-card-header class="white">
+          <mat-card-title *ngIf="!weaponSlots[idx] || !weaponSlots[idx].name">Selectionnez une arme</mat-card-title>
+          <mat-card-title *ngIf="weaponSlots[idx] && weaponSlots[idx].name">{{weaponSlots[idx].name}}</mat-card-title>
+        </mat-card-header>
+        <img *ngIf="weaponSlots[idx] && weaponSlots[idx].name" mat-card-image [src]="weaponSlots[idx].image" width="100%">
+
+        <!-- Weapon selection -->
+        <mat-card-content *ngIf="!weaponSlots[idx] || !weaponSlots[idx].name">
+            <mat-list [ngClass]="{'weapon-selection-large': ['Large', 'XLarge'].includes(breakpoint), 'weapon-selection-small': !['Large', 'XLarge'].includes(breakpoint)}" class=" overflow overflow-auto">
+                <span *ngFor="let weapon of weapons">
+                    <mat-list-item class="center" (click)="onSelectWeapon(idx, weapon)">
+                        <div class="left italic">{{ weapon.name }}</div>
+                        <div class="right"><img [src]="weapon.image" width="150" /></div>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                </span>
+            </mat-list>
+        </mat-card-content>
+
+        <!-- Show Weapon stats -->
+        <mat-card-content class="white mt-1" *ngIf="weaponSlots[idx] && weaponSlots[idx].name">
+            <div class="flex">
+                <div class="bold detail-title">Dégats</div>
+                <div>Tête : {{ weaponSlots[idx].details?.headDamage }} | Corps : {{ weaponSlots[idx].details?.bodyDamage }} | Membres : {{ weaponSlots[idx].details?.endDamage }}</div>
+            </div>
+            <div class="mt-1" class="flex">
+                <div class="bold detail-title">Cadence</div>
+                <div>{{ weaponSlots[idx].details?.fireRate }} rpm</div>
+            </div>
+            <div class="mt-2" class="flex">
+                <div class="bold detail-title">Vit. balles</div>
+                <div>{{ weaponSlots[idx].details?.bulletSpeed }} m/s</div>
+            </div>
+            <div class="mt-1" class="flex">
+                <div class="bold detail-title">Rechargement</div>
+                <div>{{ weaponSlots[idx].details?.reloadSpeed }} s</div>
+            </div>
+            <div class="mt-1" class="flex">
+                <div class="bold detail-title">Chargeur</div>
+                <div>{{ weaponSlots[idx].details?.magazineNumber }} </div>
+            </div>
+            <div class="mt-1" class="flex">
+                <div class="bold">Damage drop</div>
+            </div>
+            <div class="ml-1" *ngFor="let dmg of weaponSlots[idx].details?.damageDrop">
+                <span *ngIf="!dmg.distanceInfo">{{ dmg.percentage }}% à {{ dmg.distance }}m</span>
+                <span *ngIf="dmg.distanceInfo === '>'">{{ dmg.percentage }}% à plus de {{ dmg.distance }}m</span>
+                <span *ngIf="dmg.distanceInfo === '<'">{{ dmg.percentage }}% à moins de {{ dmg.distance }}m</span>
+            </div>
+        </mat-card-content>
+        <mat-card-actions *ngIf="weaponSlots[idx] && weaponSlots[idx].name">
+            <button class="margin-auto" mat-raised-button color="accent" (click)="onDeselectWeapon(idx)"><mat-icon>list</mat-icon>Retour</button>
+        </mat-card-actions>
+    </mat-card>
+</section>

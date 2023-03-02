@@ -1,5 +1,5 @@
 <section>
-    <div class="overflow-x mt-1">
+    <div class="overflow overflow-x mt-1">
         <div class="mr-2 mb-1 center white inline-block" *ngFor="let map of maps" (click)="showMap(map)">
             <div>{{map.name}}</div>
             <div class="mt-1"><img [src]="map.screen" alt="image de la carte" width="175"/></div>

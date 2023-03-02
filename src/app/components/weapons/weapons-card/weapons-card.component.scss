@@ -1,0 +1,31 @@
+.weapon-selection-small{
+    max-height: 15em;
+}
+
+.weapon-selection-large{
+    max-height: 40em;
+}
+
+.mat-mdc-card-header {
+    display: flex;
+    padding: 5px 5px 0;
+}
+
+mat-card{
+    min-width: 45%;
+    max-width: 50%;
+}
+
+mat-list-item{
+    min-height: 6em;
+}
+
+mat-list-item:hover{
+    background-color: #3f51b5;
+    cursor: pointer;
+}
+
+.detail-title{
+    width: 110px;
+    min-width: 110px;
+}
