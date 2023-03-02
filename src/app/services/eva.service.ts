@@ -9,7 +9,7 @@ import { Weapon } from '../models/weapon';
 export class EvaService {
 
   weapons: Weapon[] = [];
-  maps: Weapon[] = [];
+  maps: Map[] = [];
 
   constructor() { }
 
@@ -17,16 +17,16 @@ export class EvaService {
     if(this.maps.length > 0) return of(this.maps);
     else{
       this.maps = [
-        {name: "Atlantis", image: "assets/maps/atlantis.webp"},
-        {name: "Bastion", image: "assets/maps/bastion.webp"},
-        {name: "Ceres", image: "assets/maps/ceres.webp"},
-        {name: "Coliseum", image: "assets/maps/coliseum.webp"},
-        {name: "Helios Station", image: "assets/maps/helios.webp"},
-        {name: "Polaris", image: "assets/maps/polaris.webp"},
-        {name: "Silva", image: "assets/maps/silva.webp"},
-        {name: "The Artefact", image: "assets/maps/theartefact.webp"},
-        {name: "The Cliff", image: "assets/maps/thecliff.webp"},
-        {name: "The Rock", image: "assets/maps/therock.webp"},
+        {name: "Atlantis", image: "assets/maps/atlantis.webp", screen: "assets/maps/atlantis_screen.webp"},
+        {name: "Bastion", image: "assets/maps/bastion.webp", screen: "assets/maps/bastion_screen.webp"},
+        {name: "Ceres", image: "assets/maps/ceres.webp", screen: "assets/maps/ceres_screen.webp"},
+        {name: "Coliseum", image: "assets/maps/coliseum.webp", screen: "assets/maps/coliseum_screen.webp"},
+        {name: "Helios Station", image: "assets/maps/helios.webp", screen: "assets/maps/helios_screen.webp"},
+        {name: "Polaris", image: "assets/maps/polaris.webp", screen: "assets/maps/polaris_screen.webp"},
+        {name: "Silva", image: "assets/maps/silva.webp", screen: "assets/maps/silva_screen.webp"},
+        {name: "The Artefact", image: "assets/maps/theartefact.webp", screen: "assets/maps/theartefact_screen.webp"},
+        {name: "The Cliff", image: "assets/maps/thecliff.webp", screen: "assets/maps/thecliff_screen.webp"},
+        {name: "The Rock", image: "assets/maps/therock.webp", screen: "assets/maps/therock_screen.webp"},
       ]
       return of(this.maps);
     }
