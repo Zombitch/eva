@@ -9,8 +9,13 @@ import { EvaService } from 'src/app/services/eva.service';
 })
 export class MapsComponent {
   maps: Map[] = [];
+  displayedMap: Map|undefined = undefined;
   
   constructor(private evaService: EvaService){
     this.evaService.getMaps().subscribe(maps => this.maps = maps);
+  }
+
+  showMap(map:Map){
+    this.displayedMap = map;
   }
 }

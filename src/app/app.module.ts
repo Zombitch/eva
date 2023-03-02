@@ -17,6 +17,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatIconModule,
     MatExpansionModule,
     MatSlideToggleModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

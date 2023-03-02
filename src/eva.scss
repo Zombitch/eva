@@ -54,3 +54,34 @@ section > .mat-expansion-panel {
 .italic{
   font-style: italic;
 }
+
+.white{
+  color: #EEE;
+}
+
+.overflow-x{
+  overflow-x: auto;
+  white-space: nowrap;
+
+  scrollbar-color: #3f51b5 #000;
+  scrollbar-width: thin;
+}
+
+.overflow-x::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: #000;
+}
+
+.overflow-x::-webkit-scrollbar-thumb {
+  background: #3f51b5;
+}
+
+.inline-block{
+  display:inline-block
+}
+
+.responsive-image{
+  max-width: 100%;
+  height: auto;
+}
